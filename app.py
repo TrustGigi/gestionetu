@@ -2,7 +2,7 @@ import sqlite3
 import os
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 
-app = Flask(_name_)
+app = Flask(__name__)
 app.secret_key = 'ta_cle_secrete_change_moi'
 
 # Base SQLite - fichier créé automatiquement sur Render
