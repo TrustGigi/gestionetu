@@ -93,9 +93,9 @@ def etudiant():
     conn = get_db()
     cur = conn.cursor()
     cur.execute("SELECT * FROM etudiant")
-    etudiants = cur.fetchall()
+    etudiant = cur.fetchall()
     conn.close()
-    return render_template('etudiant.html', etudiants=etudiants)
+    return render_template('etudiant.html', etudiant=etudiant)
 
 @app.route('/add', methods=['POST'])
 def add():
