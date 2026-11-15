@@ -6,7 +6,7 @@ app = Flask(__name__)
 app.secret_key = 'ta_cle_secrete_change_moi'
 
 # Base SQLite - fichier créé automatiquement sur Render
-BASE_DIR = os.path.dirname(os.path.abspath(_file_))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(BASE_DIR, 'gestion.db')
 
 def get_db():
@@ -170,6 +170,6 @@ def logout():
     session.clear()
     return redirect(url_for('login'))
 
-if _name_ == '_main_':
+if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
